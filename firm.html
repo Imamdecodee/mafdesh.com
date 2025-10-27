@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join MAFDÉSH - Application Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --matte-black: #0D0D0D;
+            --royal-gold: #D4AF37;
+            --ivory-white: #F8F6F0;
+            --soft-charcoal: #3A3A3A;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--matte-black);
+            color: var(--ivory-white);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--soft-charcoal);
+            margin-bottom: 2rem;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--ivory-white), var(--royal-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            color: var(--ivory-white);
+            opacity: 0.9;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--ivory-white);
+            margin-bottom: 1rem;
+        }
+
+        .form-subtitle {
+            font-size: 1.1rem;
+            color: rgba(248, 246, 240, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .application-form {
+            background-color: rgba(58, 58, 58, 0.1);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--soft-charcoal);
+        }
+
+        .form-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--soft-charcoal);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--royal-gold);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--royal-gold);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--ivory-white);
+        }
+
+        .required::after {
+            content: " *";
+            color: var(--royal-gold);
+        }
+
+        .input-field, .textarea-field, .select-field {
+            padding: 1rem 1.5rem;
+            background-color: rgba(58, 58, 58, 0.3);
+            border: 1px solid var(--soft-charcoal);
+            border-radius: 10px;
+            color: var(--ivory-white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .input-field:focus, .textarea-field:focus, .select-field:focus {
+            outline: none;
+            border-color: var(--royal-gold);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+
+        .textarea-field {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .select-field {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .checkbox-item input {
+            margin-right: 0.5rem;
+        }
+
+        .role-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .role-option {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            background-color: rgba(58, 58, 58, 0.2);
+            border-radius: 8px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .role-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        .role-option input {
+            margin-right: 0.8rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--royal-gold);
+            color: var(--matte-black);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #c19d2f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--soft-charcoal);
+            color: rgba(248, 246, 240, 0.7);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem;
+            text-align: center;
+            color: var(--ivory-white);
+            font-size: 0.9rem;
+            opacity: 0.7;
+            border-top: 1px solid var(--soft-charcoal);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .application-form {
+                padding: 2rem 1.5rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .role-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-name {
+                font-size: 2rem;
+            }
+            
+            .application-form {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="brand-name">MAFDÉSH</h1>
+            <p class="tagline">Where Prestige Meets Purpose.</p>
+        </header>
+
+        <div class="form-header">
+            <h2 class="form-title">Join Our Movement</h2>
+            <p class="form-subtitle">We're building the future of refined commerce and looking for passionate individuals to join our team. Tell us about yourself and how you'd like to contribute.</p>
+        </div>
+
+        <form class="application-form" action="https://formsubmit.co/theilmnexus@gmail.com" method="POST" enctype="multipart/form-data">
+            <!-- Personal Information Section -->
+            <div class="form-section">
+                <h3 class="section-title">Personal Information</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName" class="required">First Name</label>
+                        <input type="text" id="firstName" name="firstName" class="input-field" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName" class="required">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" class="input-field" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="required">Email Address</label>
+                        <input type="email" id="email" name="email" class="input-field" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="input-field">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" class="input-field" placeholder="City, Country">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile</label>
+                        <input type="url" id="linkedin" name="linkedin" class="input-field" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Role Interest Section -->
+            <div class="form-section">
+                <h3 class="section-title">Role Interest</h3>
+                
+                <div class="form-group">
+                    <label class="required">Which roles are you interested in? (Select all that apply)</label>
+                    <div class="role-options">
+                        <div class="role-option">
+                            <input type="checkbox" id="contentWriter" name="roles" value="Content Writer">
+                            <label for="contentWriter">Content Writer</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="communityManager" name="roles" value="Community Manager">
+                            <label for="communityManager">Community Manager</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="videoEditor" name="roles" value="Video Editor">
+                            <label for="videoEditor">Video Editor</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="eventCoordinator" name="roles" value="Event Coordinator">
+                            <label for="eventCoordinator">Event Coordinator</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="socialMediaManager" name="roles" value="Social Media Manager">
+                            <label for="socialMediaManager">Social Media Manager</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="brandAmbassador" name="roles" value="Brand Ambassador">
+                            <label for="brandAmbassador">Brand Ambassador</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="uxDesigner" name="roles" value="UX/UI Designer">
+                            <label for="uxDesigner">UX/UI Designer</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="webDeveloper" name="roles" value="Web Developer">
+                            <label for="webDeveloper">Web Developer</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="marketingSpecialist" name="roles" value="Marketing Specialist">
+                            <label for="marketingSpecialist">Marketing Specialist</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="partnershipManager" name="roles" value="Partnership Manager">
+                            <label for="partnershipManager">Partnership Manager</label>
+                        </div>
+                        <div class="role-option">
+                            <input type="checkbox" id="otherRole" name="roles" value="Other">
+                            <label for="otherRole">Other (specify in cover letter)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="availability" class="required">Availability</label>
+                    <select id="availability" name="availability" class="select-field" required>
+                        <option value="" disabled selected>Select your availability</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Freelance">Freelance</option>
+                        <option value="Internship">Internship</option>
+                        <option value="Volunteer">Volunteer</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Professional Background -->
+            <div class="form-section">
+                <h3 class="section-title">Professional Background</h3>
+                
+                <div class="form-group">
+                    <label for="experience" class="required">Years of Relevant Experience</label>
+                    <select id="experience" name="experience" class="select-field" required>
+                        <option value="" disabled selected>Select years of experience</option>
+                        <option value="0-1">0-1 years</option>
+                        <option value="1-3">1-3 years</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="5-7">5-7 years</option>
+                        <option value="7+">7+ years</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="currentRole">Current/Most Recent Role</label>
+                    <input type="text" id="currentRole" name="currentRole" class="input-field">
+                </div>
+                
+                <div class="form-group">
+                    <label for="coverLetter" class="required">Cover Letter</label>
+                    <textarea id="coverLetter" name="coverLetter" class="textarea-field" required placeholder="Tell us about yourself, your experience, and why you want to join MAFDÉSH..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="portfolio">Portfolio/LinkedIn/Work Samples URL</label>
+                    <input type="url" id="portfolio" name="portfolio" class="input-field" placeholder="https://">
+                </div>
+                
+                <div class="form-group">
+                    <label for="resume">Upload Resume/CV (PDF, DOC, DOCX - Max 5MB)</label>
+                    <input type="file" id="resume" name="resume" class="input-field" accept=".pdf,.doc,.docx">
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="form-section">
+                <h3 class="section-title">Additional Information</h3>
+                
+                <div class="form-group">
+                    <label for="howHear">How did you hear about MAFDÉSH?</label>
+                    <select id="howHear" name="howHear" class="select-field">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="LinkedIn">LinkedIn</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Twitter">Twitter</option>
+                        <option value="Friend/Colleague">Friend/Colleague</option>
+                        <option value="Industry Event">Industry Event</option>
+                        <option value="Google Search">Google Search</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="additionalInfo">Anything else you'd like to share?</label>
+                    <textarea id="additionalInfo" name="additionalInfo" class="textarea-field" placeholder="Any additional skills, experiences, or thoughts you'd like to share..."></textarea>
+                </div>
+            </div>
+
+            <!-- Form Submission -->
+            <input type="hidden" name="_subject" value="New MAFDÉSH Application">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> <!-- Replace with your thank you page URL -->
+            
+            <button type="submit" class="btn btn-block">Submit Application</button>
+            
+            <div class="form-footer">
+                <p>We'll review your application and get back to you within 5-7 business days.</p>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2025 MAFDÉSH · Where Prestige Meets Purpose.</p>
+    </footer>
+</body>
+</html>
