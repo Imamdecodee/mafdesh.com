@@ -9,10 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --matte-black: #0D0D0D;
-            --royal-gold: #D4AF37;
-            --ivory-white: #F8F6F0;
-            --soft-charcoal: #3A3A3A;
+            --primary-blue: #0056d2;
+            --white: #ffffff;
+            --gold: #f4c430;
+            --dark-blue: #003a9c;
+            --light-gray: #f5f5f5;
             --transition: all 0.3s ease;
         }
 
@@ -28,8 +29,8 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--matte-black);
-            color: var(--ivory-white);
+            background-color: var(--white);
+            color: #333;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -44,21 +45,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(13, 13, 13, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .brand-name {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             letter-spacing: 0.1em;
-            background: linear-gradient(to right, var(--ivory-white), var(--royal-gold));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            color: var(--primary-blue);
+            text-shadow: 0 0 10px rgba(0, 86, 210, 0.1);
         }
 
         .nav-links {
@@ -67,7 +66,7 @@
         }
 
         .nav-link {
-            color: var(--ivory-white);
+            color: #333;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
@@ -78,7 +77,7 @@
         }
 
         .nav-link:hover {
-            color: var(--royal-gold);
+            color: var(--primary-blue);
         }
 
         .nav-link::after {
@@ -87,8 +86,8 @@
             bottom: -5px;
             left: 0;
             width: 0;
-            height: 1px;
-            background-color: var(--royal-gold);
+            height: 2px;
+            background-color: var(--gold);
             transition: var(--transition);
         }
 
@@ -100,7 +99,7 @@
             display: none;
             background: none;
             border: none;
-            color: var(--ivory-white);
+            color: #333;
             font-size: 1.5rem;
             cursor: pointer;
         }
@@ -115,7 +114,7 @@
             text-align: center;
             padding: 0 2rem;
             position: relative;
-            background: linear-gradient(135deg, var(--matte-black) 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
             overflow: hidden;
         }
 
@@ -126,7 +125,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.05) 50%, transparent 70%);
+            background: linear-gradient(45deg, transparent 30%, rgba(244, 196, 48, 0.05) 50%, transparent 70%);
             background-size: 400% 400%;
             animation: shimmer 8s ease-in-out infinite;
             z-index: 1;
@@ -145,29 +144,26 @@
             font-size: clamp(3.5rem, 8vw, 8rem);
             letter-spacing: 0.1em;
             margin-bottom: 1rem;
-            background: linear-gradient(to right, var(--ivory-white), var(--royal-gold));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .tagline {
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
-            letter-spacing: 0.1em;
-            color: var(--ivory-white);
-            opacity: 0.9;
+            color: var(--primary-blue);
+            text-shadow: 0 0 20px rgba(0, 86, 210, 0.1);
         }
 
         .launching-soon {
             font-size: clamp(2rem, 4vw, 4rem);
             font-weight: 400;
-            margin-top: 3rem;
-            color: var(--royal-gold);
+            margin: 2rem 0;
+            color: var(--gold);
             opacity: 0;
             animation: fadeIn 1.5s ease 0.5s forwards;
+        }
+
+        .movement-text {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 400;
+            margin: 2rem 0;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1.5s ease 0.8s forwards;
         }
 
         /* Apply Section */
@@ -179,30 +175,30 @@
             align-items: center;
             text-align: center;
             padding: 6rem 2rem;
-            background-color: var(--matte-black);
+            background-color: var(--white);
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--ivory-white);
+            color: var(--primary-blue);
             margin-bottom: 1.5rem;
         }
 
         .section-subtitle {
             font-size: 1.1rem;
             margin-bottom: 3rem;
-            color: rgba(248, 246, 240, 0.8);
+            color: #666;
             max-width: 600px;
         }
 
         .btn {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background-color: transparent;
-            color: var(--royal-gold);
-            border: 2px solid var(--royal-gold);
-            border-radius: 10px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
             text-decoration: none;
@@ -211,14 +207,14 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 86, 210, 0.2);
         }
 
         .btn:hover {
-            background-color: var(--royal-gold);
-            color: var(--matte-black);
+            background-color: var(--dark-blue);
+            border-color: var(--dark-blue);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 86, 210, 0.3);
         }
 
         .btn::after {
@@ -236,20 +232,28 @@
             left: 100%;
         }
 
-        /* Subscribe Section */
-        .subscribe {
-            min-height: 100vh;
+        /* Footer */
+        footer {
+            padding: 4rem 2rem 2rem;
+            background-color: var(--light-gray);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 6rem 2rem;
-            background-color: var(--matte-black);
+        }
+
+        .subscribe-section {
+            margin-bottom: 3rem;
+            width: 100%;
+            max-width: 600px;
         }
 
         .form-container {
-            max-width: 700px;
             width: 100%;
         }
 
@@ -262,10 +266,10 @@
         .input-field {
             flex: 1;
             padding: 1rem 1.5rem;
-            background-color: rgba(58, 58, 58, 0.3);
-            border: 1px solid var(--soft-charcoal);
-            border-radius: 10px;
-            color: var(--ivory-white);
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            color: #333;
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
@@ -273,17 +277,17 @@
 
         .input-field:focus {
             outline: none;
-            border-color: var(--royal-gold);
-            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 2px rgba(0, 86, 210, 0.2);
         }
 
         .input-field::placeholder {
-            color: rgba(248, 246, 240, 0.5);
+            color: #999;
         }
 
         .subscribe-btn {
-            background-color: var(--royal-gold);
-            color: var(--matte-black);
+            background-color: var(--primary-blue);
+            color: var(--white);
             border: none;
             cursor: pointer;
             font-weight: 600;
@@ -291,13 +295,13 @@
         }
 
         .subscribe-btn:hover {
-            background-color: #c19d2f;
+            background-color: var(--dark-blue);
             transform: translateY(-3px);
         }
 
         .thank-you-message {
             margin-top: 1.5rem;
-            color: var(--royal-gold);
+            color: var(--primary-blue);
             font-weight: 500;
             opacity: 0;
             transition: opacity 0.5s ease;
@@ -307,46 +311,40 @@
             opacity: 1;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 4rem 2rem;
-            background-color: rgba(58, 58, 58, 0.1);
-            text-align: center;
-        }
-
-        .contact-info {
+        .footer-info {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 3rem;
-            margin-top: 2rem;
+            margin: 2rem 0;
+            width: 100%;
         }
 
-        .contact-item {
+        .footer-item {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .contact-icon {
+        .footer-icon {
             font-size: 1.5rem;
-            color: var(--royal-gold);
+            color: var(--gold);
             margin-bottom: 0.5rem;
         }
 
-        .contact-text {
+        .footer-text {
             font-size: 0.9rem;
-            color: rgba(248, 246, 240, 0.8);
+            color: #666;
         }
 
-        /* Footer */
-        footer {
-            padding: 2rem;
-            text-align: center;
-            color: var(--ivory-white);
+        .copyright {
+            margin-top: 2rem;
+            color: #666;
             font-size: 0.9rem;
             opacity: 0.7;
-            border-top: 1px solid var(--soft-charcoal);
+            border-top: 1px solid #ddd;
+            padding-top: 2rem;
+            width: 100%;
         }
 
         /* Animations */
@@ -388,9 +386,10 @@
                 left: 0;
                 width: 100%;
                 flex-direction: column;
-                background-color: rgba(13, 13, 13, 0.95);
+                background-color: rgba(255, 255, 255, 0.95);
                 padding: 1.5rem;
                 gap: 1rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
             }
 
             .nav-links.active {
@@ -406,11 +405,11 @@
                 gap: 1rem;
             }
 
-            .hero, .apply, .subscribe {
+            .hero, .apply {
                 padding: 3rem 1.5rem;
             }
 
-            .contact-info {
+            .footer-info {
                 flex-direction: column;
                 gap: 2rem;
             }
@@ -425,8 +424,8 @@
                 font-size: 1.8rem;
             }
 
-            .tagline {
-                font-size: 1rem;
+            .movement-text {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -438,8 +437,6 @@
         <div class="nav-links">
             <a href="#home" class="nav-link">Home</a>
             <a href="#apply" class="nav-link">Apply</a>
-            <a href="#subscribe" class="nav-link">Subscribe</a>
-            <a href="#contact" class="nav-link">Contact</a>
         </div>
         <button class="mobile-menu-btn">☰</button>
     </nav>
@@ -448,58 +445,53 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1 class="hero-title">MAFDÉSH</h1>
-            <p class="tagline">Where Prestige Meets Purpose.</p>
             <h2 class="launching-soon">Launching Soon.</h2>
+            <p class="movement-text">Be Part of the Movement.</p>
+            <a href="./application-form.html" class="btn">Apply Now →</a>
         </div>
     </section>
 
-    <!-- Apply Now Section -->
-    <section class="apply" id="apply">
-        <h2 class="section-title">Be Part of the Movement.</h2>
-        <p class="section-subtitle">We're building the future of refined commerce. Join us as a volunteer or early collaborator.</p>
-        <a href="application-form.html" class="btn">Apply Now →</a>
-    </section>
 
-    <!-- Subscribe Section -->
-    <section class="subscribe" id="subscribe">
-        <h2 class="section-title">Stay in the Loop.</h2>
-        <p class="section-subtitle">Be the first to know when MAFDÉSH goes live.</p>
-        <div class="form-container">
-            <form id="subscribe-form">
-                <div class="form-group">
-                    <input type="text" class="input-field" placeholder="Name" required>
-                    <input type="email" class="input-field" placeholder="Email" required>
-                </div>
-                <button type="submit" class="btn subscribe-btn">Subscribe</button>
-            </form>
-            <div class="thank-you-message" id="thank-you">
-                Thank you for subscribing! We'll be in touch soon.
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <div class="contact-icon">✉️</div>
-                <div class="contact-text">mafdesh@gmail.com</div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <div class="contact-text">Offa, Kwara State</div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">📞</div>
-                <div class="contact-text">09161699509<br>08142857377</div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 MAFDÉSH · Where Prestige Meets Purpose.</p>
+        <div class="footer-content">
+            <div class="subscribe-section">
+                <h2 class="section-title">Stay Updated</h2>
+                <p class="section-subtitle">Be the first to know when MAFDÉSH goes live.</p>
+                <div class="form-container">
+                    <form id="subscribe-form">
+                        <div class="form-group">
+                            <input type="text" class="input-field" placeholder="Name" required>
+                            <input type="email" class="input-field" placeholder="Email" required>
+                        </div>
+                        <button type="submit" class="btn subscribe-btn">Subscribe</button>
+                    </form>
+                    <div class="thank-you-message" id="thank-you">
+                        Thank you for subscribing! We'll be in touch soon.
+                    </div>
+                </div>
+            </div>
+<!--             
+            <div class="footer-info">
+                <div class="footer-item">
+                    <div class="footer-icon">✉️</div>
+                    <div class="footer-text">mafdesh@gmail.com</div>
+                </div>
+                <div class="footer-item">
+                    <div class="footer-icon">📍</div>
+                    <div class="footer-text">Offa, Kwara State</div>
+                </div>
+                <div class="footer-item">
+                    <div class="footer-icon">📞</div>
+                    <div class="footer-text">09161699509<br>08142857377</div>
+                </div>
+            </div> -->
+            
+            <div class="copyright">
+                <p>© 2025 MAFDÉSH · Where Prestige Meets Purpose.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -540,10 +532,10 @@
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.style.padding = '1rem 2rem';
-                navbar.style.backgroundColor = 'rgba(13, 13, 13, 0.95)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
             } else {
                 navbar.style.padding = '1.5rem 2rem';
-                navbar.style.backgroundColor = 'rgba(13, 13, 13, 0.9)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
             }
         });
     </script>

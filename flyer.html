@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilm Nexus Skills Awareness Conference 3.0 | Digital Skills & Career Empowerment</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #002B5B;
+            --gold: #FFD700;
+            --cyan: #00BFFF;
+            --white: #FFFFFF;
+            --dark-navy: #001a36;
+            --light-blue: #00458a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background-color: var(--dark-navy);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        section {
+            padding: 5rem 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cyan), var(--gold));
+            border-radius: 2px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--cyan), var(--gold));
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 43, 91, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--gold);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-navy));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2300BFFF" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .event-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .event-details div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .event-details i {
+            color: var(--gold);
+        }
+        
+        .countdown {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 80px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .countdown-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        /* About Section */
+        .about {
+            background: var(--primary-blue);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 43, 91, 0.7), rgba(255, 215, 0, 0.3));
+            z-index: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Skills Section */
+        .skills {
+            background: var(--dark-navy);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2);
+            border-color: var(--cyan);
+        }
+        
+        .skill-card i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .benefit-item i {
+            font-size: 2rem;
+            color: var(--cyan);
+        }
+        
+        /* Speakers Section */
+        .speakers {
+            background: var(--primary-blue);
+        }
+        
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .speaker-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .speaker-image {
+            height: 250px;
+            background: var(--light-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .speaker-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .speaker-card:hover .speaker-image img {
+            transform: scale(1.1);
+        }
+        
+        .speaker-info {
+            padding: 1.5rem;
+        }
+        
+        .speaker-info h3 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .speaker-info p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+        }
+        
+        .speaker-topic {
+            font-style: italic;
+            color: var(--cyan);
+        }
+        
+        /* Schedule Section */
+        .schedule {
+            background: var(--dark-navy);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: var(--gold);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            padding: 1.5rem;
+            position: relative;
+            width: 50%;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -40px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -40px;
+        }
+        
+        .timeline-time {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Registration Section */
+        .registration {
+            background: var(--primary-blue);
+        }
+        
+        .registration-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--cyan);
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 191, 255, 0.1);
+            border-radius: 10px;
+            margin-top: 2rem;
+            border: 1px solid var(--cyan);
+        }
+        
+        .success-message i {
+            font-size: 3rem;
+            color: var(--cyan);
+            margin-bottom: 1rem;
+        }
+        
+        /* Sponsors Section */
+        .sponsors {
+            background: var(--dark-navy);
+        }
+        
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .sponsor-logo {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sponsor-logo img {
+            max-width: 100%;
+            max-height: 60px;
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--primary-blue);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--gold);
+            width: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--cyan);
+            transform: translateY(-3px);
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            height: 300px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-navy);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-content::before {
+                left: -40px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--primary-blue);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .countdown {
+                justify-content: center;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .registration-form {
+                padding: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .event-details {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Ilm <span>Nexus</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#registration">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ilm Nexus Skills Awareness Conference 3.0</h1>
+                <p>Empowering Students with Digital & Career Skills for the Future</p>
+                
+                <div class="event-details">
+                    <div><i class="fas fa-calendar-alt"></i> December 13, 2025</div>
+                    <div><i class="fas fa-map-marker-alt"></i> Faculty of CIS Hall, University of Ilorin</div>
+                    <div><i class="fas fa-clock"></i> 9:00 AM</div>
+                </div>
+                
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                
+                <a href="#registration" class="btn">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About the Event</h2>
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Previous Ilm Nexus Conference">
+                </div>
+                <div class="about-text">
+                    <p>Ilm Nexus is a youth-led digital skills and career empowerment hub that equips students with practical digital skills to prepare them for the future of work.</p>
+                    <p>After successful editions at KWASU and FSS Oyo, we're proud to bring the 3rd edition to UniIlorin. This conference will feature hands-on workshops, expert talks, and networking opportunities with industry professionals.</p>
+                    <a href="#" class="btn">Learn More About Ilm Nexus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Benefits Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Benefits</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend Development</h3>
+                    <p>Learn to build modern, responsive websites with HTML, CSS, and JavaScript</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Graphics Design</h3>
+                    <p>Master design principles and tools like Photoshop, Illustrator, and Figma</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Digital Marketing</h3>
+                    <p>Learn SEO, social media marketing, and content strategy to grow brands</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Editing</h3>
+                    <p>Edit professional videos with tools like Premiere Pro and After Effects</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-comments"></i>
+                    <h3>Communication Skills</h3>
+                    <p>Develop effective communication for professional and personal growth</p>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; margin: 3rem 0 2rem;">Event Benefits</h3>
+            <div class="benefits">
+                <div class="benefit-item fade-in">
+                    <i class="fas fa-microphone"></i>
+                    <div>
+                        <h4>Expert Speakers</h4>
+                        <p>Learn from industry professionals with years of experience</p>
+                    </div>
+                </div>
+                <div class="benefit-item fade-in">
+                    <i class="fas fa-laptop-code"></i>
+                    <div>
+                        <h4>Free Online Bootcamps</h4>
+                        <p>Access to exclusive online training after the event</p>
+                    </div>
+                </div>
+                <div class="benefit-item fade-in">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <h4>Certificates</h4>
+                        <p>Receive a certificate of participation to boost your CV</p>
+                    </div>
+                </div>
+                <div class="benefit-item fade-in">
+                    <i class="fas fa-handshake"></i>
+                    <div>
+                        <h4>Networking Opportunities</h4>
+                        <p>Connect with peers, mentors, and potential employers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="speakers">
+        <div class="container">
+            <h2 class="section-title">Our Speakers</h2>
+            <div class="speakers-grid">
+                <div class="speaker-card fade-in">
+                    <div class="speaker-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Speaker 1">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>David Adeyemi</h3>
+                        <p>Senior Frontend Developer, TechSolutions Inc.</p>
+                        <p class="speaker-topic">Modern Web Development with React</p>
+                    </div>
+                </div>
+                <div class="speaker-card fade-in">
+                    <div class="speaker-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Speaker 2">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Fatima Bello</h3>
+                        <p>Creative Director, DesignHub Africa</p>
+                        <p class="speaker-topic">Design Thinking for Digital Products</p>
+                    </div>
+                </div>
+                <div class="speaker-card fade-in">
+                    <div class="speaker-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Speaker 3">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Samuel Johnson</h3>
+                        <p>Digital Marketing Manager, GrowthLab</p>
+                        <p class="speaker-topic">Content Strategy for Brand Growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <h2 class="section-title">Event Schedule</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-time">
+                            <i class="fas fa-clock"></i> 9:00 AM - 9:30 AM
+                        </div>
+                        <h3>Opening Ceremony</h3>
+                        <p>Welcome address and keynote speech by the Vice Chancellor</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-time">
+                            <i class="fas fa-clock"></i> 9:30 AM - 12:00 PM
+                        </div>
+                        <h3>Skill Insight Sessions</h3>
+                        <p>Parallel workshops on Frontend Development, Graphics Design, and Digital Marketing</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-time">
+                            <i class="fas fa-clock"></i> 12:00 PM - 1:00 PM
+                        </div>
+                        <h3>Panel Discussion</h3>
+                        <p>Industry experts discuss "The Future of Work in the Digital Age"</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-time">
+                            <i class="fas fa-clock"></i> 1:00 PM - 2:00 PM
+                        </div>
+                        <h3>Networking Break</h3>
+                        <p>Lunch and networking with speakers and fellow participants</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-time">
+                            <i class="fas fa-clock"></i> 2:00 PM - 3:30 PM
+                        </div>
+                        <h3>Closing Remarks</h3>
+                        <p>Awarding of certificates and closing address</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="registration">
+        <div class="container">
+            <h2 class="section-title">Register to Attend</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">Join hundreds of students at UniIlorin for a day of inspiration, learning, and networking.</p>
+            
+            <div class="registration-form">
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department / Faculty</label>
+                        <input type="text" id="department" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="institution">Institution</label>
+                        <input type="text" id="institution" class="form-control" value="University of Ilorin" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Interest Area</label>
+                        <select id="interest" class="form-control" required>
+                            <option value="">Select your interest</option>
+                            <option value="Frontend">Frontend Development</option>
+                            <option value="Graphics">Graphics Design</option>
+                            <option value="Marketing">Digital Marketing</option>
+                            <option value="Video">Video Editing</option>
+                            <option value="Communication">Communication Skills</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="source">How did you hear about this event?</label>
+                        <select id="source" class="form-control" required>
+                            <option value="">Select an option</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Department">Department</option>
+                            <option value="SUG">SUG</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Join the Movement 🚀</button>
+                </form>
+                
+                <div class="success-message" id="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Thank you for registering!</h3>
+                    <p>You'll receive a confirmation email shortly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="sponsors">
+        <div class="container">
+            <h2 class="section-title">Our Partners & Supporters</h2>
+            <div class="sponsors-grid">
+                <div class="sponsor-logo fade-in">
+                    <span>Ilm Nexus</span>
+                </div>
+                <div class="sponsor-logo fade-in">
+                    <span>247 Print</span>
+                </div>
+                <div class="sponsor-logo fade-in">
+                    <span>Luster Touch</span>
+                </div>
+                <div class="sponsor-logo fade-in">
+                    <span>Mafdesh</span>
+                </div>
+                <div class="sponsor-logo fade-in">
+                    <span>KWASU</span>
+                </div>
+                <div class="sponsor-logo fade-in">
+                    <span>FSS Oyo</span>
+                </div>
+                <div class="sponsor-logo fade-in">
+                    <span>University of Ilorin</span>
+                </div>
+                <div class="sponsor-logo fade-in">
+                    <span>Yolax Prints</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#" class="btn">Become a Sponsor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>ilmnexusglobal@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>09161699509</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Venue</h4>
+                            <p>Faculty of CIS Hall, University of Ilorin</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.297438796736!2d4.672414474854833!3d8.479208091485327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10364ed7c7c4f6b1%3A0x9c9a1a9a1a9a1a9a!2sUniversity%20of%20Ilorin!5e0!3m2!1sen!2sng!4v1691234567890!5m2!1sen!2sng" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Ilm Nexus Digital Skills Hub | Building Africa's Next Generation of Digital Leaders.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Code of Conduct</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('December 13, 2025 09:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Form Submission
+        const registrationForm = document.getElementById('registration-form');
+        const successMessage = document.getElementById('success-message');
+        
+        registrationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server here
+            // For this demo, we'll just show the success message
+            registrationForm.style.display = 'none';
+            successMessage.style.display = 'block';
+            
+            // Scroll to the success message
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Fade-in Animation on Scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
+        
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '0.5rem 0';
+                header.style.background = 'rgba(0, 43, 91, 0.95)';
+            } else {
+                header.style.padding = '1rem 0';
+                header.style.background = 'rgba(0, 43, 91, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
